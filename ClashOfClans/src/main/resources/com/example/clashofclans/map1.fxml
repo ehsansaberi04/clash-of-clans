@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clashofclans.tempMap">
+   <children>
+      <ImageView fx:id="back" fitHeight="600.0" fitWidth="900.0" layoutX="1.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../clashofclans/image/green.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="map" fitHeight="600.0" fitWidth="900.0" layoutX="151.0" onMouseClicked="#clickedMap" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../clashofclans/image/raw-map.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="townHall" fitHeight="80.0" fitWidth="80.0" layoutX="411.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../clashofclans/image/town-hall.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="cannon2" fitHeight="60.0" fitWidth="60.0" layoutX="471.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../clashofclans/image/connon.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="archerTower" fitHeight="60.0" fitWidth="60.0" layoutX="511.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../clashofclans/image/archer-tower.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="elixirCollector1" fitHeight="60.0" fitWidth="60.0" layoutX="371.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../clashofclans/image/d-excir.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="elixirCollector2" fitHeight="60.0" fitWidth="60.0" layoutX="351.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../clashofclans/image/d-excir.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="maker" fitHeight="60.0" fitWidth="60.0" layoutX="511.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../clashofclans/image/maker.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="cannon1" fitHeight="60.0" fitWidth="60.0" layoutX="311.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../clashofclans/image/connon.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

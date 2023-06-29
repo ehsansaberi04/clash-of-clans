@@ -9,6 +9,7 @@ public class Player {
     private String pass ;
     private int level ;
     private Map map ;
+    private int indexMap ;
     public Player (String name , String pass) {
         this.name = name ;
         this.pass = pass ;
@@ -28,5 +29,13 @@ public class Player {
 
     public String getPass() {
         return pass;
+    }
+
+    public int getIndexMap() {
+        return indexMap;
+    }
+
+    public void setIndexMap(int indexMap) {
+        this.indexMap = indexMap;
     }
 }

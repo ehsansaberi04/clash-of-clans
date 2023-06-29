@@ -1,5 +1,6 @@
 package com.example.clashofclans.Hero;
 
+import com.example.clashofclans.Clash;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -14,16 +15,13 @@ public class Barbarian extends Army {
     private static int level ;
     private double health ;
     private double damage ;
-    private ImageView imageView ;
+    public final ImageView imageView = new ImageView (Clash.class.getResource("image/barbar.png").toString());
     public Barbarian () {
         create();
     }
     private void create () {
         this.health = 170 + (level * 30) ;
         this.damage = 18 + (level * 2) ;
-        imageView = new ImageView("");
     }
-    void findBuilding () {
 
-    }
 }
