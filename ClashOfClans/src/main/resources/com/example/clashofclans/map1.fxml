@@ -3,53 +3,155 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clashofclans.tempMap">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clashofclans.Attack.Map1">
    <children>
-      <ImageView fx:id="back" fitHeight="600.0" fitWidth="900.0" layoutX="1.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="back" fitHeight="600.0" fitWidth="900.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../clashofclans/image/green.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="map" fitHeight="600.0" fitWidth="900.0" layoutX="151.0" onMouseClicked="#clickedMap" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="map" fitHeight="600.0" fitWidth="900.0" onMouseClicked="#clickedMap" pickOnBounds="true" preserveRatio="true" x="150.0">
          <image>
             <Image url="@../clashofclans/image/raw-map.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="townHall" fitHeight="80.0" fitWidth="80.0" layoutX="411.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="townHall" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" x="410.0" y="260.0">
          <image>
             <Image url="@../clashofclans/image/town-hall.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="cannon2" fitHeight="60.0" fitWidth="60.0" layoutX="471.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="cannon2" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="470.0" y="360.0">
          <image>
             <Image url="@../clashofclans/image/connon.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="archerTower" fitHeight="60.0" fitWidth="60.0" layoutX="511.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="archerTower" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="510.0" y="200.0">
          <image>
             <Image url="@../clashofclans/image/archer-tower.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="elixirCollector1" fitHeight="60.0" fitWidth="60.0" layoutX="371.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="elixirCollector1" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="370.0" y="180.0">
          <image>
             <Image url="@../clashofclans/image/d-excir.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="elixirCollector2" fitHeight="60.0" fitWidth="60.0" layoutX="351.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="elixirCollector2" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="350.0" y="360.0">
          <image>
             <Image url="@../clashofclans/image/d-excir.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="maker" fitHeight="60.0" fitWidth="60.0" layoutX="511.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="maker" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="510.0" y="280.0">
          <image>
             <Image url="@../clashofclans/image/maker.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="cannon1" fitHeight="60.0" fitWidth="60.0" layoutX="311.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="cannon1" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="310.0" y="260.0">
          <image>
             <Image url="@../clashofclans/image/connon.jpg" />
          </image>
       </ImageView>
+      <Pane fx:id="pane1" layoutY="480.0" prefHeight="120.0" prefWidth="900.0" visible="false">
+         <children>
+            <ImageView fx:id="backPane1" fitHeight="120.0" fitWidth="900.0" onMouseEntered="#enterBackPane1" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/aa.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="cartBarbar" fitHeight="100.0" fitWidth="82.0" layoutX="200.0" layoutY="10.0" onMouseClicked="#clickedCBarbar" onMouseEntered="#enterCBarbar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/barbar-cart.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="cartArcher" fitHeight="100.0" fitWidth="82.0" layoutX="350.0" layoutY="10.0" onMouseClicked="#clickedCArcher" onMouseEntered="#enterCArcher" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/archer-cart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="cartGiant" fitHeight="100.0" fitWidth="82.0" layoutX="500.0" layoutY="10.0" onMouseClicked="#clickedCGiant" onMouseEntered="#enterCGiant" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/giant-cart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="cartPekka" fitHeight="100.0" fitWidth="82.0" layoutX="650.0" layoutY="10.0" onMouseClicked="#clickedCPekka" onMouseEntered="#enterCPekka" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/pekka-cart.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="21.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="100.0" />
+            <Text layoutX="207.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="355.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="505.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="650.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="25">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="798.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/blue.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="heroPane" layoutX="750.0" prefHeight="450.0" prefWidth="150.0">
+         <children>
+            <ImageView fx:id="heroBarbar" fitHeight="100.0" fitWidth="82.0" layoutX="34.0" layoutY="10.0" onMouseClicked="#clickedHBarbar" onMouseEntered="#enterHBarbar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/barbar-cart.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="heroArcher" fitHeight="100.0" fitWidth="82.0" layoutX="34.0" layoutY="120.0" onMouseClicked="#clickedHArcher" onMouseEntered="#enterHArcher" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/archer-cart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="heroGiant" fitHeight="100.0" fitWidth="82.0" layoutX="34.0" layoutY="230.0" onMouseClicked="#clickedHGiant" onMouseEntered="#enterHGiant" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/giant-cart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="heroPekka" fitHeight="100.0" fitWidth="82.0" layoutX="34.0" layoutY="340.0" onMouseClicked="#clickedHPekka" onMouseEntered="#enterHPekka" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/pekka-cart.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="barbarText" layoutX="5.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5" wrappingWidth="40.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="archerText" layoutX="5.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="40.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="giantText" layoutX="5.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="40.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="pekkaText" layoutX="5.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="40.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

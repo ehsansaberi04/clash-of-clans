@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clashofclans.Attack.AttackMap">
+   <children>
+      <ImageView fx:id="back" fitHeight="600.0" fitWidth="900.0" onMouseEntered="#enterBack" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/green.png" />
+         </image></ImageView>
+      <ImageView fx:id="map" fitHeight="600.0" fitWidth="600.0" layoutX="150.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="next" fitHeight="120.0" fitWidth="120.0" layoutX="765.0" layoutY="480.0" onMouseClicked="#clickedNext" onMouseEntered="#enterNext" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/next.png" />
+         </image></ImageView>
+      <ImageView fx:id="attack" fitHeight="120.0" fitWidth="120.0" layoutX="15.0" layoutY="465.0" onMouseClicked="#clickedAttack" onMouseEntered="#enterAttack" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/attack.png" />
+         </image></ImageView>
+      <Text fx:id="textName" layoutX="15.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="name">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Text fx:id="textLimit" layoutX="15.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="limit">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="targetProfile" fitHeight="80.0" fitWidth="80.0" layoutX="15.0" layoutY="15.0" onMouseClicked="#clickedTarget" onMouseEntered="#enterTarget" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/p0.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="exit" fitHeight="80.0" fitWidth="80.0" layoutX="805.0" layoutY="15.0" onMouseClicked="#clickedExit" onMouseEntered="#enterExit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/zarb.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

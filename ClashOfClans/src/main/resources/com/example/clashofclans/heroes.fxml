@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="pane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clashofclans.Heroes">
+   <children>
+      <ImageView fx:id="back" fitHeight="600.0" fitWidth="900.0" onMouseEntered="#enterBack" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/green.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="barbar" fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="25.0" onMouseClicked="#clickedBarbar" onMouseEntered="#enterBarbar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/barbar.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="archer" fitHeight="150.0" fitWidth="200.0" layoutX="250.0" layoutY="25.0" onMouseClicked="#clickedArcher" onMouseEntered="#enterArcher" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/archer.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="giant" fitHeight="150.0" fitWidth="200.0" layoutX="425.0" layoutY="25.0" onMouseClicked="#clickedGiant" onMouseEntered="#enterGiant" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/giant.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="pekka" fitHeight="150.0" fitWidth="200.0" layoutX="625.0" layoutY="25.0" onMouseClicked="#clickedPekka" onMouseEntered="#enterPekka" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/pekka.png" />
+         </image>
+      </ImageView>
+      <Pane fx:id="pane1" layoutX="200.0" layoutY="200.0" prefHeight="350.0" prefWidth="500.0">
+         <children>
+            <ImageView fx:id="backPane1" fitHeight="350.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" />
+            <Text fx:id="textBord" layoutX="100.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="bord" wrappingWidth="300.0" />
+            <Text fx:id="textName" layoutX="100.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="name" wrappingWidth="300.0" />
+            <Text fx:id="textAttackType" layoutX="100.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="atak to" wrappingWidth="300.0" />
+            <Text fx:id="textHealth" layoutX="100.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="health" wrappingWidth="300.0" />
+            <Text fx:id="textDamage" layoutX="100.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="damage" wrappingWidth="300.0" />
+            <Text fx:id="textSpeed" layoutX="100.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="speed" wrappingWidth="300.0" />
+            <Text fx:id="textSpeedAttack" layoutX="100.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="speed atttak" wrappingWidth="300.0" />
+            <Text fx:id="textLevel" layoutX="5.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="level" textAlignment="CENTER" wrappingWidth="100.0">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+            <Text fx:id="textSpace" layoutX="5.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="space" textAlignment="CENTER" wrappingWidth="100.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <ImageView fx:id="exit" fitHeight="50.0" fitWidth="50.0" layoutX="836.0" layoutY="14.0" onMouseClicked="#clickedExit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/zarb.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

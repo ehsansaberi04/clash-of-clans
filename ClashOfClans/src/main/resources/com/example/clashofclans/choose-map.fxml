@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="460.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clashofclans.chooseMap">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clashofclans.ChooseMap">
    <children>
-      <ImageView fx:id="map1" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#clicked1" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="map4" fitHeight="150.0" fitWidth="200.0" layoutX="246.0" layoutY="216.0" onMouseClicked="#clicked4" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="map3" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="216.0" onMouseClicked="#clicked3" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="map2" fitHeight="150.0" fitWidth="200.0" layoutX="246.0" layoutY="14.0" onMouseClicked="#clicked2" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="back" fitHeight="600.0" fitWidth="900.0" onMouseEntered="#enterBack" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/green.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="map1" fitHeight="250.0" fitWidth="250.0" layoutX="77.0" layoutY="29.0" onMouseClicked="#clicked1" onMouseEntered="#enter1" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/image-map-1.PNG" />
+         </image></ImageView>
+      <ImageView fx:id="map4" fitHeight="250.0" fitWidth="250.0" layoutX="574.0" layoutY="326.0" onMouseClicked="#clicked4" onMouseEntered="#enter4" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/image-map-4.PNG" />
+         </image></ImageView>
+      <ImageView fx:id="map3" fitHeight="250.0" fitWidth="250.0" layoutX="77.0" layoutY="326.0" onMouseClicked="#clicked3" onMouseEntered="#enter3" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/image-map-3.PNG" />
+         </image></ImageView>
+      <ImageView fx:id="map2" fitHeight="250.0" fitWidth="250.0" layoutX="574.0" layoutY="29.0" onMouseClicked="#clicked2" onMouseEntered="#enter2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/image-map-2.PNG" />
+         </image></ImageView>
+      <Button fx:id="OKButton" layoutX="400.0" layoutY="407.0" mnemonicParsing="false" onMouseClicked="#clickedOK" prefHeight="100.0" prefWidth="100.0" text="Button" />
    </children>
 </AnchorPane>

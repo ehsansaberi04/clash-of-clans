@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clashofclans.Personal">
+   <children>
+      <ImageView fx:id="back" fitHeight="600.0" fitWidth="900.0" onMouseEntered="#enterBack" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/green.png" />
+         </image></ImageView>
+      <ImageView fx:id="attack" fitHeight="120.0" fitWidth="120.0" layoutX="15.0" layoutY="465.0" onMouseClicked="#clickedAttack" onMouseEntered="#enterAttack" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="765.0" AnchorPane.topAnchor="465.0">
+         <image>
+            <Image url="@image/attack.png" />
+         </image></ImageView>
+      <ImageView fx:id="profile" fitHeight="120.0" fitWidth="120.0" layoutX="15.0" layoutY="15.0" onMouseClicked="#clickedProfile" onMouseEntered="#enterProfile" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="465.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="765.0" AnchorPane.topAnchor="15.0">
+         <image>
+            <Image url="@image/p0.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="hero" fitHeight="120.0" fitWidth="120.0" layoutX="766.0" layoutY="483.0" onMouseClicked="#clickedHero" onMouseEntered="#enterHero" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/hero.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -11,4 +11,6 @@ module com.example.clashofclans {
     opens com.example.clashofclans.Building to javafx.fxml;
     exports com.example.clashofclans.Hero;
     opens com.example.clashofclans.Hero to javafx.fxml;
+    exports com.example.clashofclans.Attack;
+    opens com.example.clashofclans.Attack to javafx.fxml;
 }

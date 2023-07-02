@@ -1,21 +1,22 @@
 package com.example.clashofclans.Building;
 
+
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-public class TownHall extends Building{
+public class Maker extends Building{
 //    properties
-
     private static int level = 1;
 //    constructor
-    public TownHall (ImageView imageView) {
-        super(Type.main , (700 + (level * 100)), imageView);
+    public Maker(ImageView imageView) {
+        super(Type.army , (250 + (level * 50)), imageView);
     }
 //    getter
     public static int getLevel() {
         return level;
     }
-//    setter
+    //    setter
     public static void setLevel(int level) {
-        TownHall.level = level;
+        Maker.level = level;
     }
 }
