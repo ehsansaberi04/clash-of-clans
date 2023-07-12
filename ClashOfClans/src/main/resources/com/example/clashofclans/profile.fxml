@@ -7,11 +7,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clashofclans.Profile">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clashofclans.Personals.Profile">
    <children>
       <ImageView fx:id="back" fitHeight="600.0" fitWidth="900.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@image/blue.png" />
+            <Image url="@image/back1.png" />
          </image>
       </ImageView>
       <ImageView fx:id="profile" fitHeight="250.0" fitWidth="250.0" layoutX="325.0" layoutY="50.0" onMouseClicked="#clickedProfile" pickOnBounds="true" preserveRatio="true">

@@ -7,54 +7,44 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clashofclans.Attack.Maps.Map1">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clashofclans.Attack.Maps.Map3">
    <children>
       <ImageView fx:id="back" fitHeight="600.0" fitWidth="900.0" onMouseEntered="#enterBack" opacity="0.8" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../clashofclans/image/green.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="map" fitHeight="600.0" fitWidth="900.0" onMouseClicked="#clickedMap" onMouseEntered="#enterMap" pickOnBounds="true" preserveRatio="true" x="150.0">
+      <ImageView fx:id="map" fitHeight="600.0" fitWidth="600.0" onMouseClicked="#clickedMap" onMouseEntered="#enterMap" pickOnBounds="true" preserveRatio="true" x="150.0">
          <image>
             <Image url="@../clashofclans/image/raw-map.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="townHall" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" x="410.0" y="260.0">
+      <ImageView fx:id="townHall" fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" x="390.0" y="160.0">
          <image>
             <Image url="@../clashofclans/image/town-hall.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="cannon2" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="470.0" y="360.0">
+      <ImageView fx:id="cannon" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="450.0" y="260.0">
          <image>
             <Image url="@../clashofclans/image/connon.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="archerTower" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="510.0" y="200.0">
+      <ImageView fx:id="archerTower" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="290.0" y="260.0">
          <image>
             <Image url="@../clashofclans/image/archer-tower.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="elixirCollector1" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="370.0" y="180.0">
+      <ImageView fx:id="elixirCollector" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="290.0" y="160.0">
          <image>
             <Image url="@../clashofclans/image/d-excir.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="elixirCollector2" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="350.0" y="360.0">
-         <image>
-            <Image url="@../clashofclans/image/d-excir.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="maker" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="510.0" y="280.0">
+      <ImageView fx:id="maker" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="510.0" y="180.0">
          <image>
             <Image url="@../clashofclans/image/maker.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="cannon1" fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true" x="310.0" y="260.0">
-         <image>
-            <Image url="@../clashofclans/image/connon.jpg" />
-         </image>
-      </ImageView>
-      <Pane fx:id="pane1" layoutY="480.0" prefHeight="120.0" prefWidth="900.0" visible="false">
+      <Pane fx:id="pane1" layoutX="10.0" layoutY="490.0" prefHeight="120.0" prefWidth="900.0" visible="false">
          <children>
             <ImageView fx:id="backPane1" fitHeight="120.0" fitWidth="900.0" onMouseEntered="#enterBackPane1" opacity="0.6" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -109,7 +99,7 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane fx:id="heroPane" layoutX="750.0" onMouseEntered="#enterHeroPane" prefHeight="450.0" prefWidth="150.0">
+      <Pane fx:id="heroPane" layoutX="760.0" layoutY="10.0" onMouseEntered="#enterHeroPane" prefHeight="450.0" prefWidth="150.0">
          <children>
             <ImageView fx:id="heroBarbar" fitHeight="100.0" fitWidth="82.0" layoutX="34.0" layoutY="10.0" onMouseClicked="#clickedHBarbar" onMouseEntered="#enterHBarbar" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -153,7 +143,7 @@
             </Text>
          </children>
       </Pane>
-      <Pane fx:id="paneEndGame" layoutX="200.0" layoutY="160.0" prefHeight="280.0" prefWidth="500.0" visible="false">
+      <Pane fx:id="paneEndGame" layoutX="210.0" layoutY="170.0" prefHeight="280.0" prefWidth="500.0" visible="false">
          <children>
             <ImageView fx:id="backPaneEndGame" fitHeight="280.0" fitWidth="500.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
                <image>

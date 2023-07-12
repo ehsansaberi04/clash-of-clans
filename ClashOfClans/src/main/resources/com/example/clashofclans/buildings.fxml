@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="pane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clashofclans.Personals.Buildings">
+   <children>
+      <ImageView fx:id="back" fitHeight="600.0" fitWidth="900.0" onMouseEntered="#enterBack" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/back1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="archerTower" fitHeight="150.0" fitWidth="150.0" layoutX="10.0" layoutY="25.0" onMouseClicked="#clickedArcherTower" onMouseEntered="#enterArcherTower" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/archer-tower-cart.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="cannon" fitHeight="200.0" fitWidth="200.0" layoutX="135.0" layoutY="25.0" onMouseClicked="#clickedCannon" onMouseEntered="#enterCannon" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/cannon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="elixir" fitHeight="150.0" fitWidth="150.0" layoutX="330.0" layoutY="25.0" onMouseClicked="#clickedElixir" onMouseEntered="#enterElixir" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/elixir-collector.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="townHall" fitHeight="150.0" fitWidth="150.0" layoutX="650.0" layoutY="25.0" onMouseClicked="#clickedTownHall" onMouseEntered="#enterTownHall" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/building.png" />
+         </image>
+      </ImageView>
+      <Pane fx:id="pane1" layoutX="200.0" layoutY="200.0" prefHeight="350.0" prefWidth="500.0">
+         <children>
+            <ImageView fx:id="backPane1" fitHeight="350.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" />
+            <Text fx:id="textBord" layoutX="54.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="bord" wrappingWidth="300.0" />
+            <Text fx:id="textName" layoutX="54.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="name" wrappingWidth="300.0" />
+            <Text fx:id="textType" layoutX="54.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="type" wrappingWidth="300.0" />
+            <Text fx:id="textHealth" layoutX="54.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="health" wrappingWidth="300.0" />
+            <Text fx:id="textDamage" layoutX="54.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="damage" wrappingWidth="300.0" />
+            <Text fx:id="textSpeedAttack" layoutX="54.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="speed atttak" wrappingWidth="300.0" />
+            <Text fx:id="textLevel" layoutX="5.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="level" textAlignment="CENTER" wrappingWidth="100.0">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <ImageView fx:id="exit" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#clickedExit" onMouseEntered="#enterExit" pickOnBounds="true" preserveRatio="true" x="835.0" y="15.0">
+         <image>
+            <Image url="@image/zarb.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="maker" fitHeight="150.0" fitWidth="150.0" layoutX="490.0" layoutY="28.0" onMouseClicked="#clickedMaker" onMouseEntered="#enterMaker" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/maker-cart.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

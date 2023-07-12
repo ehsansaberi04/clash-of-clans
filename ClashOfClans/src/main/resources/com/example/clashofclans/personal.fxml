@@ -4,7 +4,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clashofclans.Personal">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.clashofclans.Personals.Personal">
    <children>
       <ImageView fx:id="back" fitHeight="600.0" fitWidth="900.0" onMouseEntered="#enterBack" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -19,9 +19,14 @@
             <Image url="@image/p0.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="hero" fitHeight="120.0" fitWidth="120.0" layoutX="766.0" layoutY="483.0" onMouseClicked="#clickedHero" onMouseEntered="#enterHero" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="hero" fitHeight="120.0" fitWidth="120.0" layoutX="765.0" layoutY="470.0" onMouseClicked="#clickedHero" onMouseEntered="#enterHero" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@image/hero.jpg" />
+            <Image url="@image/hero.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="building" fitHeight="120.0" fitWidth="120.0" layoutX="765.0" layoutY="15.0" onMouseClicked="#clickedBuilding" onMouseEntered="#enterBuilding" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/building.png" />
          </image>
       </ImageView>
    </children>
