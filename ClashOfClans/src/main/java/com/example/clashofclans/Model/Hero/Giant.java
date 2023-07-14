@@ -13,8 +13,8 @@ public class Giant extends Army {
     private double damage ;
     public static final ImageView imageView = new ImageView (Clash.class.getResource("image/giant.png").toString());
 //    constructor
-    public Giant () {
-        super(825 + (level * 75));
+    public Giant (ImageView imageView) {
+        super(825 + (level * 75) , imageView);
         create();
     }
     private void create () {

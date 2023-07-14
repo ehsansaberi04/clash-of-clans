@@ -25,7 +25,7 @@ public class ThreadAttack1 implements Runnable{
         showEndGame();
     }
     private boolean endGameB () {
-        if(War.buildings.size() == 0) {
+        if(War.buildings.size() == 0 && !Map1.endGame) {
             return true ;
         } else return false ;
     }

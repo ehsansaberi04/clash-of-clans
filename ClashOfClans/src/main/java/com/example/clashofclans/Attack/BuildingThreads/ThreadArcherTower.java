@@ -1,8 +1,13 @@
 package com.example.clashofclans.Attack.BuildingThreads;
 
+import com.example.clashofclans.Attack.Maps.Map1;
 import com.example.clashofclans.Attack.War;
 import com.example.clashofclans.Model.Building.ArcherTower;
 import javafx.scene.image.ImageView;
+
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import static java.lang.Thread.sleep;
 
@@ -17,16 +22,15 @@ public class ThreadArcherTower implements Runnable{
     }
     @Override
     public void run() {
-        while (isAlive()) {
-            try {
-                sleep(1000);
-            } catch (InterruptedException e) {
-                System.out.println(e.getMessage());
+        ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
+        executor.scheduleAtFixedRate(() -> {
+            if (isAlive()){
+
+            } else {
+                destroying();
+                executor.shutdown();
             }
-        }
-        War.buildings.remove(War.buildings.indexOf(archerTower));
-        War.map.get(archerTower).setVisible(false);
-        War.map.remove(archerTower) ;
+        }, 0, 1, TimeUnit.SECONDS);
     }
     private boolean isAlive () {
         if(archerTower.getHealth() <= 0 )
@@ -34,7 +38,11 @@ public class ThreadArcherTower implements Runnable{
         else return true ;
     }
 
-
+    private void destroying() {
+        War.buildings.remove(War.buildings.indexOf(archerTower));
+        War.map.get(archerTower).setVisible(false);
+        War.map.remove(archerTower) ;
+    }
 
 
 

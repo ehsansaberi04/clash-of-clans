@@ -22,7 +22,7 @@ public class ThreadPekka implements Runnable{
     private double myX ;
     private double myY ;
     public ThreadPekka(ImageView imageView){
-        pekka = new Pekka() ;
+        pekka = new Pekka(imageView) ;
         this.imageView = imageView ;
         myX = imageView.getX() ;
         myY = imageView.getY() ;

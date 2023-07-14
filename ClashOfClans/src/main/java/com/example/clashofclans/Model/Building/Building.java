@@ -11,8 +11,13 @@ public abstract class Building {
     public Building (Type type , double health , ImageView imageView) {
         this.type = type ;
         this.health = health ;
-        this.x = imageView.getX();
-        this.y = imageView.getY();
+        if (type.equals(Type.main)){
+            this.x = imageView.getX() + 20;
+            this.y = imageView.getY() + 20;
+        } else {
+            this.x = imageView.getX() + 15;
+            this.y = imageView.getY() + 15;
+        }
         this.imageView = imageView;
     }
     public Type getType() {

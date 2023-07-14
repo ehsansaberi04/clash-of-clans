@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.shape.Arc;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -58,7 +59,7 @@ public class Heroes implements Initializable {
     @FXML
     void clickedArcher(MouseEvent event) {
         pane1.setVisible(true);
-        Archer archer1 = new Archer() ;
+        Archer archer1 = new Archer(Archer.imageView) ;
         textLevel.setText("lvl : " + Archer.getLevel());
         textName.setText("Archer");
         textHealth.setText("Health : " + archer1.getHealth());
@@ -74,7 +75,7 @@ public class Heroes implements Initializable {
     @FXML
     void clickedBarbar(MouseEvent event) {
         pane1.setVisible(true);
-        Barbarian barbarian1 = new Barbarian() ;
+        Barbarian barbarian1 = new Barbarian(Barbarian.imageView) ;
         textLevel.setText("lvl : " + Barbarian.getLevel());
         textName.setText("barbarian");
         textHealth.setText("Health : " + barbarian1.getHealth());
@@ -102,7 +103,7 @@ public class Heroes implements Initializable {
     @FXML
     void clickedGiant(MouseEvent event) {
         pane1.setVisible(true);
-        Giant giant1 = new Giant() ;
+        Giant giant1 = new Giant(Giant.imageView) ;
         textLevel.setText("lvl : " + Giant.getLevel());
         textName.setText("giant");
         textHealth.setText("Health : " + giant1.getHealth());
@@ -118,7 +119,7 @@ public class Heroes implements Initializable {
     @FXML
     void clickedPekka(MouseEvent event) {
         pane1.setVisible(true);
-        Pekka pekka1 = new Pekka() ;
+        Pekka pekka1 = new Pekka(Pekka.imageView) ;
         textLevel.setText("lvl : " + Pekka.getLevel());
         textName.setText("pekka");
         textHealth.setText("Health : " + pekka1.getHealth());

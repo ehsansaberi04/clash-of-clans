@@ -14,8 +14,8 @@ public class Archer extends Army {
     private double damage ;
     public static final ImageView imageView = new ImageView (Clash.class.getResource("image/archer.png").toString());
 //    constructor
-    public Archer () {
-        super(140 + (level * 25));
+    public Archer (ImageView imageView) {
+        super(140 + (level * 25), imageView);
         create();
     }
     private void create () {

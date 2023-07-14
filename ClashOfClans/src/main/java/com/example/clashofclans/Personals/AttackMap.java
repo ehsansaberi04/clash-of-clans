@@ -1,9 +1,9 @@
 package com.example.clashofclans.Personals;
 
 import com.example.clashofclans.Attack.Maps.Map1;
-import com.example.clashofclans.Attack.Maps.Map2;
-import com.example.clashofclans.Attack.Maps.Map3;
-import com.example.clashofclans.Attack.Maps.Map4;
+//import com.example.clashofclans.Attack.Maps.Map2;
+//import com.example.clashofclans.Attack.Maps.Map3;
+//import com.example.clashofclans.Attack.Maps.Map4;
 import com.example.clashofclans.Clash;
 import com.example.clashofclans.Model.Player;
 import javafx.fxml.FXML;
@@ -52,48 +52,49 @@ public class AttackMap implements Initializable {
                     Map1.setStage(stage);
                     Map1.setPlayer(player);
                     Map1.setTarget(targetPlayer);
+                    Map1.setLimitHero(50);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
             }
             case 2-> {
-                try {
-                    FXMLLoader fxmlLoader = new FXMLLoader(Clash.class.getResource("map2.fxml"));
-                    Scene scene = new Scene(fxmlLoader.load());
-                    stage.setScene(scene);
-                    stage.show();
-                    Map2.setStage(stage);
-                    Map2.setPlayer(player);
-                    Map2.setTarget(targetPlayer);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+//                try {
+//                    FXMLLoader fxmlLoader = new FXMLLoader(Clash.class.getResource("map2.fxml"));
+//                    Scene scene = new Scene(fxmlLoader.load());
+//                    stage.setScene(scene);
+//                    stage.show();
+//                    Map2.setStage(stage);
+//                    Map2.setPlayer(player);
+//                    Map2.setTarget(targetPlayer);
+//                } catch (IOException e) {
+//                    throw new RuntimeException(e);
+//                }
             }
             case 3-> {
-                try {
-                    FXMLLoader fxmlLoader = new FXMLLoader(Clash.class.getResource("map3.fxml"));
-                    Scene scene = new Scene(fxmlLoader.load());
-                    stage.setScene(scene);
-                    stage.show();
-                    Map3.setStage(stage);
-                    Map3.setPlayer(player);
-                    Map3.setTarget(targetPlayer);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+//                try {
+//                    FXMLLoader fxmlLoader = new FXMLLoader(Clash.class.getResource("map3.fxml"));
+//                    Scene scene = new Scene(fxmlLoader.load());
+//                    stage.setScene(scene);
+//                    stage.show();
+//                    Map3.setStage(stage);
+//                    Map3.setPlayer(player);
+//                    Map3.setTarget(targetPlayer);
+//                } catch (IOException e) {
+//                    throw new RuntimeException(e);
+//                }
             }
             case 4-> {
-                try {
-                    FXMLLoader fxmlLoader = new FXMLLoader(Clash.class.getResource("map4.fxml"));
-                    Scene scene = new Scene(fxmlLoader.load());
-                    stage.setScene(scene);
-                    stage.show();
-                    Map4.setStage(stage);
-                    Map4.setPlayer(player);
-                    Map4.setTarget(targetPlayer);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+//                try {
+//                    FXMLLoader fxmlLoader = new FXMLLoader(Clash.class.getResource("map4.fxml"));
+//                    Scene scene = new Scene(fxmlLoader.load());
+//                    stage.setScene(scene);
+//                    stage.show();
+//                    Map4.setStage(stage);
+//                    Map4.setPlayer(player);
+//                    Map4.setTarget(targetPlayer);
+//                } catch (IOException e) {
+//                    throw new RuntimeException(e);
+//                }
             }
         }
     }

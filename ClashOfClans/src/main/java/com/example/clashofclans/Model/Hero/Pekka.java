@@ -13,8 +13,8 @@ public class Pekka extends Army {
     private double damage ;
     public static final ImageView imageView = new ImageView (Clash.class.getResource("image/pekka.png").toString());
 //    constructor
-    public Pekka () {
-        super(1250 + (level * 250));
+    public Pekka (ImageView imageView) {
+        super(1250 + (level * 250) , imageView);
         create();
     }
     private void create () {

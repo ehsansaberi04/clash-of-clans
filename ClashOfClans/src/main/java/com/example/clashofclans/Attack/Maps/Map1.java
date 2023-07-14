@@ -34,6 +34,10 @@ public class Map1 implements Initializable {
     @FXML
     private ImageView archerTower;
     @FXML
+    private Text limitText;
+    @FXML
+    private ImageView startWar;
+    @FXML
     private ImageView back;
     @FXML
     private ImageView backPane1;
@@ -92,22 +96,35 @@ public class Map1 implements Initializable {
     private Text pekkaText;
     @FXML
     private ImageView townHall;
-
+//    ----- clicked
+//    choose cart
     @FXML
     void clickedCArcher(MouseEvent event) {
-
+        if (limitHero >= 1){
+            archerNumber ++ ;
+            limitHero -- ;
+        }
     }
     @FXML
     void clickedCBarbar(MouseEvent event) {
-
+        if (limitHero >= 1){
+            barbarNumber ++ ;
+            limitHero -- ;
+        }
     }
     @FXML
     void clickedCGiant(MouseEvent event) {
-
+        if (limitHero >= 5){
+            giantNumber ++ ;
+            limitHero -= 5 ;
+        }
     }
     @FXML
     void clickedCPekka(MouseEvent event) {
-
+        if (limitHero >= 25){
+            pekkaNumber ++ ;
+            limitHero -= 25 ;
+        }
     }
     @FXML
     void clickedHBarbar(MouseEvent event) {
@@ -145,71 +162,79 @@ public class Map1 implements Initializable {
     }
     @FXML
     void clickedMap(MouseEvent event) {
-        switch (heroNumber) {
-            case 1->{
-                if(barbarNumber > 0) {
-                    ImageView temp = new ImageView();
-                    temp.setImage(Barbarian.imageView.getImage());
-                    temp.setFitHeight(40);
-                    temp.setFitWidth(40);
-                    temp.setX(event.getX() - 20);
-                    temp.setY(event.getY() - 20);
-                    temp.setVisible(true);
-                    pane.getChildren().add(temp);
-                    ThreadBarbar threadBarbar = new ThreadBarbar(temp);
-                    Platform.runLater(threadBarbar);
-                    barbarNumber -- ;
+        if(!endGame) {
+            switch (heroNumber) {
+                case 1 -> {
+                    if (barbarNumber > 0) {
+                        ImageView temp = new ImageView();
+                        temp.setImage(Barbarian.imageView.getImage());
+                        temp.setFitHeight(40);
+                        temp.setFitWidth(40);
+                        temp.setX(event.getX() - 20);
+                        temp.setY(event.getY() - 20);
+                        temp.setVisible(true);
+                        pane.getChildren().add(temp);
+                        ThreadBarbar threadBarbar = new ThreadBarbar(temp);
+                        Platform.runLater(threadBarbar);
+                        barbarNumber--;
+                    }
+                }
+                case 2 -> {
+                    if (archerNumber > 0) {
+                        ImageView temp = new ImageView();
+                        temp.setImage(Archer.imageView.getImage());
+                        temp.setFitHeight(40);
+                        temp.setFitWidth(40);
+                        temp.setX(event.getX() - 20);
+                        temp.setY(event.getY() - 20);
+                        temp.setVisible(true);
+                        pane.getChildren().add(temp);
+                        ThreadArcher threadArcher = new ThreadArcher(temp, pane);
+                        Platform.runLater(threadArcher);
+                        archerNumber--;
+                    }
+                }
+                case 3 -> {
+                    if (giantNumber > 0) {
+                        ImageView temp = new ImageView();
+                        temp.setX(event.getX() - 20);
+                        temp.setY(event.getY() - 20);
+                        temp.setVisible(true);
+                        pane.getChildren().add(temp);
+                        ThreadGiant threadGiant = new ThreadGiant(temp);
+                        Platform.runLater(threadGiant);
+                        giantNumber--;
+                    }
+                }
+                case 4 -> {
+                    if (pekkaNumber > 0) {
+                        ImageView temp = new ImageView();
+                        temp.setImage(Pekka.imageView.getImage());
+                        temp.setFitHeight(40);
+                        temp.setFitWidth(40);
+                        temp.setX(event.getX() - 20);
+                        temp.setY(event.getY() - 20);
+                        temp.setVisible(true);
+                        pane.getChildren().add(temp);
+                        ThreadPekka threadPekka = new ThreadPekka(temp);
+                        Platform.runLater(threadPekka);
+                        pekkaNumber--;
+                    }
+                }
+                default -> {
                 }
             }
-            case 2->{
-                if(giantNumber > 0) {
-                    ImageView temp = new ImageView();
-                    temp.setImage(Archer.imageView.getImage());
-                    temp.setFitHeight(40);
-                    temp.setFitWidth(40);
-                    temp.setX(event.getX() - 20);
-                    temp.setY(event.getY() - 20);
-                    temp.setVisible(true);
-                    pane.getChildren().add(temp);
-                    ThreadArcher threadArcher = new ThreadArcher(temp , pane);
-                    Platform.runLater(threadArcher);
-                    archerNumber -- ;
-                }
-            }
-            case 3->{
-                if(giantNumber > 0) {
-                    ImageView temp = new ImageView();
-                    temp.setImage(Giant.imageView.getImage());
-                    temp.setFitHeight(40);
-                    temp.setFitWidth(40);
-                    temp.setX(event.getX() - 20);
-                    temp.setY(event.getY() - 20);
-                    temp.setVisible(true);
-                    pane.getChildren().add(temp);
-                    ThreadGiant threadGiant = new ThreadGiant(temp);
-                    Platform.runLater(threadGiant);
-                    giantNumber -- ;
-                }
-            }
-            case 4->{
-                if(pekkaNumber > 0) {
-                    ImageView temp = new ImageView();
-                    temp.setImage(Pekka.imageView.getImage());
-                    temp.setFitHeight(40);
-                    temp.setFitWidth(40);
-                    temp.setX(event.getX() - 20);
-                    temp.setY(event.getY() - 20);
-                    temp.setVisible(true);
-                    pane.getChildren().add(temp);
-                    ThreadPekka threadPekka = new ThreadPekka(temp);
-                    Platform.runLater(threadPekka);
-                    pekkaNumber -- ;
-                }
-            }
-            default ->{}
         }
     }
-//    enter
+    @FXML
+    void clickedWar(MouseEvent event) {
+        if (limitHero == 0) {
+            startWar();
+            endGame = false ;
+            pane1.setVisible(false);
+        }
+    }
+    //    enter
     @FXML
     void enterBack(MouseEvent event) {
         heroArcher.setScaleX(1);
@@ -318,6 +343,10 @@ public class Map1 implements Initializable {
         heroPekka.setScaleX(1);
         heroPekka.setScaleY(1);
     }
+    @FXML
+    void enterWar(MouseEvent event) {
+
+    }
 //    other function
 
     public void setTexts () {
@@ -325,41 +354,53 @@ public class Map1 implements Initializable {
         archerText.setText(String.valueOf(archerNumber));
         giantText.setText(String.valueOf(giantNumber));
         pekkaText.setText(String.valueOf(pekkaNumber));
+        limitText.setText(String.valueOf(limitHero));
         if (barbarNumber==0){
             heroBarbar.setVisible(false);
             barbarText.setVisible(false);
+        } else {
+            heroBarbar.setVisible(true);
+            barbarText.setVisible(true);
         }
         if (archerNumber==0){
             heroArcher.setVisible(false);
             archerText.setVisible(false);
+        } else {
+            heroArcher.setVisible(true);
+            archerText.setVisible(true);
         }
         if (giantNumber==0){
             heroGiant.setVisible(false);
             giantText.setVisible(false);
+        } else {
+            heroGiant.setVisible(true);
+            giantText.setVisible(true);
         }
         if (pekkaNumber==0){
             heroPekka.setVisible(false);
             pekkaText.setVisible(false);
+        } else {
+            heroPekka.setVisible(true);
+            pekkaText.setVisible(true);
         }
     }
     private int heroNumber ;
-    private static int barbarNumber = 5 ;
-    private static int archerNumber = 1 ;
-    private static int giantNumber = 1 ;
-    private static int pekkaNumber = 1 ;
+    private static int barbarNumber = 0 ;
+    private static int archerNumber = 0 ;
+    private static int giantNumber = 0 ;
+    private static int pekkaNumber = 0 ;
     private static int remain ;
     public static int setRemain() {
-        remain = barbarNumber + archerNumber + giantNumber + pekkaNumber + War.armies.size() ;
+        remain = barbarNumber + archerNumber + giantNumber + pekkaNumber + War.armies.size() + limitHero;
         return remain ;
     }
     private static Player player ;
     private static Player target ;
-
     public static void setPlayer(Player temp) {
         player = temp;
     }
     public static void setTarget(Player temp) {
-        Map1.target = temp;
+        target = temp;
     }
     public static boolean endGame = false ;
     public static boolean attackerWinn = false ;
@@ -386,14 +427,25 @@ public class Map1 implements Initializable {
             throw new RuntimeException(e);
         }
     }
+    private static int limitHero = 30;
+    public static void setLimitHero (int limit) {
+        limitHero = limit ;
+    }
 //    initialize
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        archerNumber = 0 ;
+        barbarNumber = 0 ;
+        giantNumber = 0 ;
+        pekkaNumber = 0 ;
+        endGame = true ;
         War.clear();
-        pane1.setVisible(false);
+//        startWar();
+        pane1.setVisible(true);
         heroPane.setVisible(true);
+        paneEndGame.setVisible(false);
         setRemain();
-        startWar();
+        System.out.println(remain);
         ThreadAttack1 attack = new ThreadAttack1(this);
         Thread thread = new Thread(attack);
         thread.start();
@@ -402,15 +454,18 @@ public class Map1 implements Initializable {
     private void startWar () {
 //        archer tower
         ThreadArcherTower threadArcherTower = new ThreadArcherTower(archerTower);
-        Thread t1 = new Thread(threadArcherTower) ;
-        t1.start();
+        Platform.runLater(threadArcherTower); ;
+//        Thread t1 = new Thread(threadArcherTower) ;
+//        t1.start();
 //   cannons
-        ThreadCannon threadCannon1 = new ThreadCannon(cannon1);
-        Thread t2 = new Thread(threadCannon1);
-        t2.start();
-        ThreadCannon threadCannon2 = new ThreadCannon(cannon2);
-        Thread t3 = new Thread(threadCannon2);
-        t3.start();
+        ThreadCannon threadCannon1 = new ThreadCannon(cannon1 , pane);
+        Platform.runLater(threadCannon1);
+//        Thread t2 = new Thread(threadCannon1);
+//        t2.start();
+        ThreadCannon threadCannon2 = new ThreadCannon(cannon2 , pane);
+        Platform.runLater(threadCannon2);
+//        Thread t3 = new Thread(threadCannon2);
+//        t3.start();
 //        elixir maker
         ThreadElixirMaker threadElixirMaker1 = new ThreadElixirMaker(elixirCollector1) ;
         Thread t4 = new Thread(threadElixirMaker1);

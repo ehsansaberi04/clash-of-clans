@@ -13,8 +13,8 @@ import java.io.IOException;
 public class Clash extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader(Clash.class.getResource("login.fxml"));
-        FXMLLoader fxmlLoader = new FXMLLoader(Clash.class.getResource("map1.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Clash.class.getResource("login.fxml"));
+//        FXMLLoader fxmlLoader = new FXMLLoader(Clash.class.getResource("map1.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stg = stage ;
         stg.setScene(scene);

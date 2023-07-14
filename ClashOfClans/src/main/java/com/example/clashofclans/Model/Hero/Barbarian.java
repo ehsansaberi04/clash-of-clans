@@ -13,12 +13,12 @@ public class Barbarian extends Army {
     private double damage ;
     public static final ImageView imageView = new ImageView (Clash.class.getResource("image/barbars/barbar.png").toString());
 //    constructor
-    public Barbarian () {
-        super(170 + (level * 30));
+    public Barbarian (ImageView imageView) {
+        super(170 + (level * 30) , imageView);
         create();
     }
     private void create () {
-        this.damage = 180 + (level * 2) ;
+        this.damage = 68 + (level * 2) ;
     }
 //    getter
     public double getSpeed() {

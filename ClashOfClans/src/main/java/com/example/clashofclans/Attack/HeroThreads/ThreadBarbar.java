@@ -5,6 +5,7 @@ import com.example.clashofclans.Clash;
 import com.example.clashofclans.Model.Building.Building;
 import com.example.clashofclans.Model.Hero.Barbarian;
 import javafx.animation.TranslateTransition;
+import javafx.geometry.NodeOrientation;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
@@ -24,7 +25,8 @@ public class ThreadBarbar implements Runnable{
     private double myX ;
     private double myY ;
     public ThreadBarbar (ImageView imageView){
-        barbarian = new Barbarian() ;
+        barbarian = new Barbarian(imageView) ;
+        War.armies.add(barbarian);
         this.imageView = imageView ;
         myX = imageView.getX() ;
         myY = imageView.getY() ;
@@ -40,30 +42,34 @@ public class ThreadBarbar implements Runnable{
     private double distance ;
     private Building target ;
     private TranslateTransition transition ;
-    private synchronized void finding () {
-        if(War.buildings.size() != 0) {
-            double minX = 10000;
-            double minY = 10000;
-            Building near = null;
-            double minDistance = 10000;
-            for (Building building : War.buildings) {
-                double x2 = building.getX();
-                double y2 = building.getY();
-                double distance = distance(myX, x2, myY, y2);
-                if (distance <= minDistance) {
-                    minDistance = distance;
-                    near = building;
-                    minX = x2;
-                    minY = y2;
+    private void finding () {
+        if(isAlive()) {
+            if (War.buildings.size() != 0) {
+                double minX = 10000;
+                double minY = 10000;
+                Building near = null;
+                double minDistance = 10000;
+                for (Building building : War.buildings) {
+                    double x2 = building.getX();
+                    double y2 = building.getY();
+                    double distance = distance(myX, x2, myY, y2);
+                    if (distance <= minDistance) {
+                        minDistance = distance;
+                        near = building;
+                        minX = x2;
+                        minY = y2;
+                    }
                 }
+                moveX = minX - myX;
+                moveY = minY - myY;
+                distance = minDistance;
+                target = near;
+//                myX += moveX;
+//                myY += moveY;
+                walking();
+            } else {
+                destroying();
             }
-            moveX = minX - myX ;
-            moveY = minY - myY ;
-            distance = minDistance ;
-            target = near ;
-            myX += moveX ;
-            myY += moveY ;
-            walking();
         } else {
             destroying();
         }
@@ -94,7 +100,6 @@ public class ThreadBarbar implements Runnable{
             },0,1, TimeUnit.SECONDS);
         });
     }
-
     synchronized  boolean isAlive () {
         if(barbarian.getHealth() <= 0 )
             return false ;
@@ -116,18 +121,29 @@ public class ThreadBarbar implements Runnable{
     private boolean isAttacked ;
     private int counter ;
     private void animationWalking () {
+        if (moveX < 0) {
+            imageView.setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
+        } else {
+            imageView.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
+        }
         counter = 1 ;
         ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
         executor.scheduleAtFixedRate(() -> {
-            if (isWalked) {
-                if (counter % 2 == 0) {
-                    imageView.setImage(images.get(0));
+            if(isAlive()) {
+                if (isWalked) {
+                    if (counter % 2 == 0) {
+                        imageView.setImage(images.get(0));
+                    } else {
+                        imageView.setImage(images.get(1));
+                    }
+                    counter += 1;
+//                    fixLocation();
                 } else {
-                    imageView.setImage(images.get(1));
+                    executor.shutdown();
                 }
-                counter += 1 ;
             } else {
                 executor.shutdown();
+                destroying();
             }
         }, 0, 600, TimeUnit.MILLISECONDS);
         imageView.setImage(images.get(0));
@@ -137,7 +153,6 @@ public class ThreadBarbar implements Runnable{
         ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
         executor.scheduleAtFixedRate(() -> {
             if (isAttacked) {
-                System.out.println(counter);
                 switch (counter % 4) {
                     case 1->{
                         imageView.setImage(images.get(2));
@@ -167,5 +182,25 @@ public class ThreadBarbar implements Runnable{
         images.add(new Image(Clash.class.getResource("image/barbars/barbar-2.png").toString()));
         images.add(new Image(Clash.class.getResource("image/barbars/barbar-3.png").toString()));
         images.add(new Image(Clash.class.getResource("image/barbars/barbar-4.png").toString()));
+    }
+    private void fixLocation () {
+        double myTargetX = target.getX();
+        double myTargetY = target.getY();
+        double ratio ;
+        if(moveX == 0) {
+            barbarian.setY(barbarian.getY() + (distance/duration(distance))*1000);
+        } else if (moveY == 0) {
+            barbarian.setX(barbarian.getX() + (distance/duration(distance))*1000);
+        } else if (abs(moveX) < abs(moveY)){
+            ratio = moveX/abs(moveY) ;
+            barbarian.setX(barbarian.getX() + (distance/duration(distance))*1000*(moveX/abs(moveX))*ratio);
+            barbarian.setY(barbarian.getY() + (distance/duration(distance))*1000*(moveY/abs(moveY)));
+        } else {
+            ratio = moveY/abs(moveX) ;
+            barbarian.setX(barbarian.getX() + (distance/duration(distance))*1000*(moveX/abs(moveX)));
+            barbarian.setY(barbarian.getY() + (distance/duration(distance))*1000*(moveY/abs(moveY))*ratio);
+        }
+        myX = barbarian.getX();
+        myY = barbarian.getY();
     }
 }

@@ -26,7 +26,7 @@ public class ThreadArcher implements Runnable{
     private double myY ;
     Pane pane ;
     public ThreadArcher(ImageView imageView , Pane pane){
-        archer = new Archer() ;
+        archer = new Archer(imageView) ;
         this.imageView = imageView ;
         myX = imageView.getX() ;
         myY = imageView.getY() ;
